@@ -71,6 +71,10 @@ class Data():
 
             # Adding the profile information
             if category == 'profile':
+                if id_number != self.profile[id_number][0]:
+                    self.profile[id_number].insert(0,id_number)
+
+                print(self.profile[id_number])
                 #adding the id number to the profile data
                 add = ",".join(self.profile[id_number])
                 self.parts.append(add)
