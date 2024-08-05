@@ -392,7 +392,58 @@ class Application(tk.Tk):
         self.quit_button.pack(side='left', padx=30, pady=50, fill='x', anchor='e')
 
     def results_stage(self):
-        pass
+        self.bg = tk.Label(self, bg='white', width=500, height=700)
+        self.bg.place(x=0, y=0)
+
+        self.label_1 = tk.Label(self,text='Details',font=('Arial', 11), bg='white')
+        self.label_1.pack(pady=7)
+
+        self.label_2 = tk.Label(self,text=f'Identification number: {user.profile[self.id_num][0]}',font=('Arial', 11), bg='white')
+        self.label_2.pack(anchor='w')
+        self.label_3 = tk.Label(self,text=f'Full name: {user.profile[self.id_num][1]}',font=('Arial', 11), bg='white')
+        self.label_3.pack(anchor='w')
+        self.label_4 = tk.Label(self,text=f'Email: {user.profile[self.id_num][2]}',font=('Arial', 11), bg='white')
+        self.label_4.pack(anchor='w')
+        self.label_5 = tk.Label(self,text=f'Date of Birth: {user.profile[self.id_num][3]}',font=('Arial', 11), bg='white')
+        self.label_5.pack(anchor='w')
+        self.label_6 = tk.Label(self,text=f'Gender: {user.profile[self.id_num][4]}',font=('Arial', 11), bg='white')
+        self.label_6.pack(anchor='w')
+        self.label_6 = tk.Label(self,text=f'Nationality: {user.profile[self.id_num][5]}',font=('Arial', 11), bg='white')
+        self.label_6.pack(anchor='w')
+        self.label_7 = tk.Label(self,text=f'Phone Number: {user.contact[self.id_num][0]}',font=('Arial', 11), bg='white')
+        self.label_7.pack(anchor='w')
+        self.label_8 = tk.Label(self,text=f'Name of Parent: {user.contact[self.id_num][1]}',font=('Arial', 11), bg='white')
+        self.label_8.pack(anchor='w')
+        self.label_9 = tk.Label(self,text=f'Relation : {user.contact[self.id_num][2]}',font=('Arial', 11), bg='white')
+        self.label_9.pack(anchor='w')
+        self.label_10 = tk.Label(self,text=f'Phone Number of Parent: {user.contact[self.id_num][3]}',font=('Arial', 11), bg='white')
+        self.label_10.pack(anchor='w')
+        self.label_11 = tk.Label(self,text=f'Name of Parent: {user.contact[self.id_num][4]}',font=('Arial', 11), bg='white')
+        self.label_11.pack(anchor='w')
+        self.label_12 = tk.Label(self,text=f'Relation: {user.contact[self.id_num][5]}',font=('Arial', 11), bg='white')
+        self.label_12.pack(anchor='w')
+        self.label_13 = tk.Label(self,text=f'Phone Number of Parent: {user.contact[self.id_num][6]}',font=('Arial', 11), bg='white')
+        self.label_13.pack(anchor='w')
+        self.label_14 = tk.Label(self,text=f'Past School: {user.education[self.id_num][0]}',font=('Arial', 11), bg='white')
+        self.label_14.pack(anchor='w')
+        self.label_15 = tk.Label(self,text=f'Level of education: {user.education[self.id_num][1]}',font=('Arial', 11), bg='white')
+        self.label_15.pack(anchor='w')
+        self.label_16 = tk.Label(self,text=f'Examination Board: {user.education[self.id_num][2]}',font=('Arial', 11), bg='white')
+        self.label_16.pack(anchor='w')
+        self.label_17 = tk.Label(self,text=f'Mathematics Grade: {user.education[self.id_num][3]}',font=('Arial', 11), bg='white')
+        self.label_17.pack(anchor='w')
+        self.label_18 = tk.Label(self,text=f'English Grade: {user.education[self.id_num][4]}',font=('Arial', 11), bg='white')
+        self.label_18.pack(anchor='w')
+        self.label_19 = tk.Label(self,text=f'Art Grade: {user.education[self.id_num][5]}',font=('Arial', 11), bg='white')
+        self.label_19.pack(anchor='w')
+        self.label_20 = tk.Label(self,text=f'Activities: {user.activities[self.id_num]}',font=('Arial', 11), bg='white')
+        self.label_20.pack(anchor='w')
+
+
+
+
+
+
 
     def process_profile_stage(self):
         self.dob = self.dob_entry.get()
@@ -490,6 +541,7 @@ class Application(tk.Tk):
 
     def switch_stage(self):
         if self.stage == 0:
+            self.destroy()
             self.__init__(400, 600)
         elif self.stage == 1:
             self.profile_stage()
